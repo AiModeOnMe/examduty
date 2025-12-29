@@ -1,0 +1,402 @@
+/* src/components/HallList.css */
+
+/* ========================================
+   HALL LIST STYLES
+   ======================================== */
+
+.hall-page {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Hall Hero */
+.hall-hero {
+  position: relative;
+  padding: 80px 24px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hall-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 50% 0%, rgba(251, 191, 36, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  z-index: -1;
+}
+
+.hall-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hall-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 30%, #8b5cf6 70%, #3b82f6 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease infinite;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+
+.hall-hero p {
+  font-size: 1.25rem;
+  color: var(--gray-400);
+  margin-bottom: 40px;
+}
+
+/* Hall Stats Row */
+.hall-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hall-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 32px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-2xl);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.hall-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hall-stat-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-warning);
+  border-radius: var(--radius-xl);
+  font-size: 1.5rem;
+}
+
+.hall-stat-info {
+  text-align: left;
+}
+
+.hall-stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-100);
+}
+
+.hall-stat-label {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+/* Main Content */
+.hall-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Layout Grid */
+.hall-layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Form Card */
+.hall-form-card {
+  position: sticky;
+  top: 24px;
+}
+
+.hall-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hall-form-actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.hall-form-actions .btn {
+  flex: 1;
+}
+
+/* Halls Grid */
+.halls-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.halls-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.halls-grid-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.halls-grid-title h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-100);
+}
+
+.halls-count-badge {
+  padding: 6px 14px;
+  background: var(--gradient-warning);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.halls-filter-inline {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.halls-filter-inline .input-wrapper,
+.halls-filter-inline .select-wrapper {
+  margin-bottom: 0;
+  min-width: 180px;
+}
+
+/* Block Groups */
+.block-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.block-group {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+}
+
+.block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.05));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.block-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.block-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-warning);
+  border-radius: var(--radius-xl);
+  font-size: 1.25rem;
+}
+
+.block-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-100);
+}
+
+.block-count {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+
+/* Halls List in Block */
+.halls-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 24px;
+}
+
+.hall-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-normal);
+}
+
+.hall-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.hall-item-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hall-item-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(251, 191, 36, 0.1);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+}
+
+.hall-item-name {
+  font-weight: 500;
+  color: var(--gray-200);
+}
+
+.hall-item-actions {
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.hall-item:hover .hall-item-actions {
+  opacity: 1;
+}
+
+.hall-action-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--gray-400);
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all var(--transition-fast);
+}
+
+.hall-action-btn:hover {
+  background: var(--primary-500);
+  color: white;
+}
+
+.hall-action-btn.delete:hover {
+  background: var(--danger-500);
+}
+
+/* Empty Block State */
+.empty-block {
+  text-align: center;
+  padding: 40px;
+  color: var(--gray-500);
+}
+
+/* All Halls Empty State */
+.halls-empty-state {
+  text-align: center;
+  padding: 80px 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-2xl);
+}
+
+.halls-empty-icon {
+  font-size: 5rem;
+  margin-bottom: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.halls-empty-state h3 {
+  font-size: 1.5rem;
+  color: var(--gray-300);
+  margin-bottom: 8px;
+}
+
+.halls-empty-state p {
+  color: var(--gray-500);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hall-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hall-form-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .hall-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hall-stats-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .halls-filter-inline {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .halls-filter-inline .input-wrapper,
+  .halls-filter-inline .select-wrapper {
+    width: 100%;
+  }
+
+  .halls-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hall-item-actions {
+    opacity: 1;
+  }
+}

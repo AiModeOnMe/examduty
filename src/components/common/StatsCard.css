@@ -1,0 +1,167 @@
+/* src/components/common/StatsCard.css */
+
+.stats-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-2xl);
+  padding: 24px;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.stats-gradient-primary::before {
+  background: var(--gradient-primary);
+}
+
+.stats-gradient-success::before {
+  background: var(--gradient-success);
+}
+
+.stats-gradient-warning::before {
+  background: var(--gradient-warning);
+}
+
+.stats-gradient-danger::before {
+  background: var(--gradient-danger);
+}
+
+.stats-gradient-info::before {
+  background: var(--gradient-info);
+}
+
+.stats-card-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.stats-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  flex-shrink: 0;
+}
+
+.stats-gradient-primary .stats-icon-wrapper {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+}
+
+.stats-gradient-success .stats-icon-wrapper {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(52, 211, 153, 0.2));
+}
+
+.stats-gradient-warning .stats-icon-wrapper {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.2));
+}
+
+.stats-gradient-danger .stats-icon-wrapper {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(248, 113, 113, 0.2));
+}
+
+.stats-gradient-info .stats-icon-wrapper {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.2));
+}
+
+.stats-icon {
+  font-size: 1.75rem;
+}
+
+.stats-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.stats-title {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  margin: 0 0 8px;
+}
+
+.stats-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.stats-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-100);
+  line-height: 1;
+}
+
+.stats-change {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+}
+
+.stats-change-positive {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success-400);
+}
+
+.stats-change-negative {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger-400);
+}
+
+.stats-change-neutral {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--gray-400);
+}
+
+.stats-subtitle {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin: 8px 0 0;
+}
+
+.stats-bg-glow {
+  position: absolute;
+  top: 50%;
+  right: -20%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.stats-gradient-primary .stats-bg-glow {
+  background: var(--primary-500);
+}
+
+.stats-gradient-success .stats-bg-glow {
+  background: var(--success-500);
+}
+
+.stats-gradient-warning .stats-bg-glow {
+  background: var(--warning-500);
+}
+
+.stats-gradient-danger .stats-bg-glow {
+  background: var(--danger-500);
+}
+
+.stats-gradient-info .stats-bg-glow {
+  background: #3b82f6;
+}

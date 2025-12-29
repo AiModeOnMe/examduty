@@ -1,0 +1,165 @@
+/* src/components/common/Input.css */
+
+.input-wrapper,
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.input-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-300);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.required-star {
+  color: var(--danger-400);
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  font-size: 1rem;
+  color: var(--gray-500);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input-field,
+.select-field,
+.textarea-field {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  color: var(--gray-100);
+  font-size: 0.9375rem;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.input-field.has-icon,
+.select-field.has-icon {
+  padding-left: 48px;
+}
+
+.input-field::placeholder,
+.textarea-field::placeholder {
+  color: var(--gray-600);
+}
+
+.input-field:hover,
+.select-field:hover,
+.textarea-field:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.input-field:focus,
+.select-field:focus,
+.textarea-field:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  background: rgba(99, 102, 241, 0.05);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.input-field:disabled,
+.select-field:disabled,
+.textarea-field:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Select Specific */
+.select-field {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 44px;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 16px;
+  font-size: 0.625rem;
+  color: var(--gray-500);
+  pointer-events: none;
+  transition: transform var(--transition-fast);
+}
+
+.select-wrapper:focus-within .select-arrow {
+  transform: rotate(180deg);
+}
+
+/* Textarea */
+.textarea-field {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Size Variants */
+.input-sm .input-field,
+.input-sm .select-field {
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  border-radius: var(--radius-lg);
+}
+
+.input-sm .input-field.has-icon,
+.input-sm .select-field.has-icon {
+  padding-left: 40px;
+}
+
+.input-lg .input-field,
+.input-lg .select-field {
+  padding: 18px 20px;
+  font-size: 1rem;
+}
+
+.input-lg .input-field.has-icon,
+.input-lg .select-field.has-icon {
+  padding-left: 56px;
+}
+
+/* Error State */
+.has-error .input-field,
+.has-error .select-field,
+.has-error .textarea-field {
+  border-color: var(--danger-500);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.has-error .input-field:focus,
+.has-error .select-field:focus,
+.has-error .textarea-field:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.input-error {
+  font-size: 0.75rem;
+  color: var(--danger-400);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.input-error::before {
+  content: '⚠';
+}
+
+.input-helper {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
